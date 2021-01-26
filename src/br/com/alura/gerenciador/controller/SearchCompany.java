@@ -6,20 +6,20 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import br.com.alura.gerenciador.model.Banco;
-import br.com.alura.gerenciador.model.Empresa;
+import br.com.alura.gerenciador.model.Bank;
+import br.com.alura.gerenciador.model.Company;
 
-public class MostraEmpresa implements Action{
+public class SearchCompany implements Action{
 	public String execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		String paramId = request.getParameter("id");
 		Integer id = Integer.valueOf(paramId);
 		
-		Banco banco = new Banco();
-		Empresa empresa = banco.buscaEmpresaId(id);
+		Bank bank = new Bank();
+		Company company = bank.hasId(id);
 			
-		request.setAttribute("empresa", empresa);
+		request.setAttribute("company", company);
 		
-		return "forward:formAlteraEmpresa.jsp";
+		return "forward:formEditCompany.jsp";
 	}
 }

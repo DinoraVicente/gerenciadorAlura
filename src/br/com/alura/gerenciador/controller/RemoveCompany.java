@@ -6,17 +6,17 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import br.com.alura.gerenciador.model.Banco;
+import br.com.alura.gerenciador.model.Bank;
 
-public class RemoveEmpresa implements Action{
+public class RemoveCompany implements Action{
 	public String execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String paramId = request.getParameter("id");
 		Integer id = Integer.valueOf(paramId);
 		
-		Banco banco = new Banco();
-		banco.removeEmpresa(id);
+		Bank bank = new Bank();
+		bank.removeCompany(id);
 		
-		return "redirect:entrada?action=ListaEmpresas";
+		return "redirect:index?action=ListCompany";
 	}
 }

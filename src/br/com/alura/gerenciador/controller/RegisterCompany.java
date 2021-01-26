@@ -6,11 +6,11 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class CadastroEmpresa implements Action{
+public class RegisterCompany implements Action{
 	public String execute(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
 		
-		return "forward:formNovaEmpresa.jsp";
+		return "forward:formNewCompany.jsp";
 		
 	}
 }
