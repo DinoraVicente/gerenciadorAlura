@@ -5,14 +5,33 @@
 	id="WebApp_ID" version="4.0">
 	<display-name>gerenciador</display-name>
 	<welcome-file-list>
-		<welcome-file>bem-vindo.html</welcome-file>
+		<welcome-file>welcome.html</welcome-file>
 	</welcome-file-list>
-	<servlet>
-		<servlet-name>ListaEmpresas</servlet-name>
-		<servlet-class>br.com.alura.gerenciador.servlet.ListaEmpresasServlet</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>ListaEmpresas</servlet-name>
-		<url-pattern>/Lista</url-pattern>
-	</servlet-mapping>
+	
+	<filter>
+	    <filter-name>MF</filter-name>
+	    <filter-class>br.com.alura.gerenciador.servlet.MonitoringFilter</filter-class>
+	</filter>
+	<filter-mapping>
+	    <filter-name>MF</filter-name>
+	    <url-pattern>/index</url-pattern>
+	</filter-mapping>
+	
+	<filter>
+    	<filter-name>SF</filter-name>
+	    <filter-class>br.com.alura.gerenciador.servlet.SecurityFilter</filter-class>
+	</filter>
+	<filter-mapping>
+	    <filter-name>SF</filter-name>
+	    <url-pattern>/index</url-pattern>
+	</filter-mapping>
+	
+	<filter>
+	    <filter-name>CF</filter-name>
+	    <filter-class>br.com.alura.gerenciador.servlet.ControllerFilter</filter-class>
+	</filter>
+	<filter-mapping>
+	    <filter-name>CF</filter-name>
+	    <url-pattern>/index</url-pattern>
+	</filter-mapping>
 </web-app>
